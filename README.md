@@ -24,7 +24,7 @@ A lightweight, terminal-based tool to view open ports and kill the processes occ
 If you have Rust installed, you can install directly from the repository:
 
 ```bash
-cargo install --git [https://gitlab.com/your-username/killport-tui](https://gitlab.com/your-username/killport-tui)
+cargo install --git [https://github.com/last1chosen/killport-tui](https://github.com/last1chosen/killport-tui)
 
 
 # Build and run

@@ -1,0 +1,22 @@
+[package]
+name = "killport-tui"
+version = "1.0.0"
+edition = "2024"
+authors = ["Josh"]
+description = "A TUI tool to view ports and kill processes."
+license = "MIT"
+keywords = ["cli", "port", "process", "kill", "linux", "tui"]
+categories = ["command-line-utilities", "visualization"]
+
+[dependencies]
+ratatui = "0.29.0"
+crossterm = "0.29"
+listeners = "0.3"
+sysinfo = "0.37.2"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"

@@ -6,7 +6,7 @@ authors = ["Josh"]
 description = "A TUI tool to view ports and kill processes."
 repository = "https://github.com/last1chosen/killport-tui"
 license = "MIT"
-keywords = ["cli", "port", "process", "kill", "linux", "tui"]
+keywords = ["cli", "port", "process", "kill", "tui"]
 categories = ["command-line-utilities", "visualization"]
 readme = "README.md"
 

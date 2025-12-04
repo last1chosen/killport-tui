@@ -1,12 +1,14 @@
 [package]
 name = "killport-tui"
-version = "1.0.0"
+version = "0.0.1"
 edition = "2024"
 authors = ["Josh"]
 description = "A TUI tool to view ports and kill processes."
+repository = "https://github.com/last1chosen/killport-tui"
 license = "MIT"
 keywords = ["cli", "port", "process", "kill", "linux", "tui"]
 categories = ["command-line-utilities", "visualization"]
+readme = "README.md"
 
 [dependencies]
 ratatui = "0.29.0"

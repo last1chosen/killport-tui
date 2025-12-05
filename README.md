@@ -1,6 +1,6 @@
 # Killport-tui 🦀
 
-A lightweight, terminal-based tool to view open ports and kill the processes occupying them. Built with Rust and Ratatui.
+A lightweight, terminal-based UI tool to view open ports and kill the processes occupying them. Built with Rust and Ratatui.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)

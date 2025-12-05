@@ -1,6 +1,6 @@
 [package]
 name = "killport-tui"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2024"
 authors = ["Josh"]
 description = "A TUI tool to view ports and kill processes."

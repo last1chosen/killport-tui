@@ -246,7 +246,7 @@ fn ui(f: &mut Frame, app: &mut App) {
         .iter()
         .map(|p| {
             Row::new(vec![
-                Cell::from(p.port.to_string()).style(Style::default().fg(Color::Cyan)),
+                Cell::from(p.port.to_string()).style(Style::default().fg(Color::LightBlue)),
                 Cell::from(p.pid.to_string()),
                 Cell::from(p.name.clone()).style(Style::default().fg(Color::Green)),
                 Cell::from(p.command.clone()),

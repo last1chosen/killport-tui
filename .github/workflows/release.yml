@@ -38,12 +38,9 @@ jobs:
         shell: bash
         run: |
           mkdir -p dist
-          # We rename the binary to your desired 'kp' name internally if you want, 
-          # but for the install.sh to work, we usually keep unique names.
-          # Here we stick to the asset_name defined in the matrix.
           cp target/release/${{ matrix.artifact_name }} dist/${{ matrix.asset_name }}
 
-      - name: Upload Release Asset
+      - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
         with:
           files: dist/${{ matrix.asset_name }}

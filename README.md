@@ -24,7 +24,7 @@ A lightweight, terminal-based UI tool to view open ports and kill the processes 
 #### macOS / Linux
 
 ```bash
-curl -sL [https://raw.githubusercontent.com/your-username/killport-tui/main/install.sh](https://raw.githubusercontent.com/last1chosen/killport-tui/main/install.sh) | sh
+curl -sL [https://raw.githubusercontent.com/last1chosen/killport-tui/main/install.sh](https://raw.githubusercontent.com/last1chosen/killport-tui/main/install.sh) | sh
 ```
 
 #### Windows

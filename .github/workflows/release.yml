@@ -16,13 +16,13 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            artifact_name: killport-tui
+            artifact_name: kp
             asset_name: killport-tui-linux-amd64
           - os: windows-latest
-            artifact_name: killport-tui.exe
+            artifact_name: kp.exe
             asset_name: killport-tui-windows-amd64.exe
           - os: macos-latest
-            artifact_name: killport-tui
+            artifact_name: kp
             asset_name: killport-tui-macos-amd64
 
     steps:

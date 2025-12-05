@@ -21,10 +21,12 @@ jobs:
           - os: windows-latest
             artifact_name: kp.exe
             asset_name: killport-tui-windows-amd64.exe
-          - os: macos-latest
+          - os: macos-13 # builds for mac with intel chips
             artifact_name: kp
             asset_name: killport-tui-macos-amd64
-
+          - os: macos-14 # builds for M1->M4
+            artifact_name: kp
+            asset_name: killport-tui-macos-arm64
     steps:
       - uses: actions/checkout@v4
 

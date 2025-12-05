@@ -9,8 +9,8 @@ on:
       - "v*"
 
 jobs:
-  build-and-release:
-    name: Build for ${{ matrix.os }}
+  build:
+    name: Build ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -34,13 +34,30 @@ jobs:
       - name: Build
         run: cargo build --release
 
-      - name: Rename and Move Binary
+      - name: Rename Binary
         shell: bash
         run: |
           mkdir -p dist
           cp target/release/${{ matrix.artifact_name }} dist/${{ matrix.asset_name }}
 
-      - name: Upload Release Assets
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset_name }}
+          path: dist/${{ matrix.asset_name }}
+
+  publish:
+    name: Publish Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create Release & Upload Files
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/${{ matrix.asset_name }}
+          files: artifacts/*

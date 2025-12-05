@@ -1,0 +1,49 @@
+name: Release
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-release:
+    name: Build for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact_name: killport-tui
+            asset_name: killport-tui-linux-amd64
+          - os: windows-latest
+            artifact_name: killport-tui.exe
+            asset_name: killport-tui-windows-amd64.exe
+          - os: macos-latest
+            artifact_name: killport-tui
+            asset_name: killport-tui-macos-amd64
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build
+        run: cargo build --release
+
+      - name: Rename and Move Binary
+        shell: bash
+        run: |
+          mkdir -p dist
+          # We rename the binary to your desired 'kp' name internally if you want, 
+          # but for the install.sh to work, we usually keep unique names.
+          # Here we stick to the asset_name defined in the matrix.
+          cp target/release/${{ matrix.artifact_name }} dist/${{ matrix.asset_name }}
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/${{ matrix.asset_name }}
